@@ -65,6 +65,10 @@ type MayanEdmsClient interface {
 	RemoveWorkflowTemplateTransition(workflowTemplateId int, transitionId int) error
 	UpdateWorkflowTemplateTransition(workflowTemplateId int, transition WorkflowTemplateTransition) (*WorkflowTemplateTransition, error)
 
+	GetWorkflowTransitionTrigger(workflowTemplateId int, transitionId int, triggerId int) (*WorkflowTemplateTransitionTrigger, error)
+	CreateWorkflowTransitionTrigger(workflowTemplateId int, transitionId int, eventTypeId string) (*WorkflowTemplateTransitionTrigger, error)
+	DeleteWorkflowTransitionTrigger(workflowTemplateId int, transitionId int, triggerId int) error
+
 	GetRoleById(id int) (*Role, error)
 	CreateRole(tag Role) (*Role, error)
 	UpdateRole(tag Role) (*Role, error)
